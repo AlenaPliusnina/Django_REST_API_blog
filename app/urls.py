@@ -1,4 +1,4 @@
-from app.views import PostList, PostDetail, CategoryList, CategoryDetail, AuthorList, AuthorDetail
+from app.views import PostList, PostDetail, CategoryList, CategoryDetail
 from django.urls import path
 
 app_name = 'app'
