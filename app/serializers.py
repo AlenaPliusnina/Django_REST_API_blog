@@ -11,7 +11,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
 
-    author = AuthorSerializer(required=False)
+    author = AuthorSerializer(required=False, read_only=True)
     # category = CategorySerializer(required=False)
 
     class Meta:
@@ -20,7 +20,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    posts = PostSerializer(many=True, required=False)
+    posts = PostSerializer(many=True, required=False, read_only=True)
 
     class Meta:
         model = Category
