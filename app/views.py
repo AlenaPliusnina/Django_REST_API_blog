@@ -1,6 +1,7 @@
 # from django.shortcuts import render
+from django.contrib.auth.models import User
 from app.models import Post, Category
-from app.serializers import PostSerializer, CategorySerializer
+from app.serializers import PostSerializer, CategorySerializer, AuthorSerializer
 from rest_framework import generics
 
 
@@ -22,3 +23,13 @@ class CategoryList(generics.ListCreateAPIView):
 class CategoryDetail(generics.RetrieveAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+
+class AuthorList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = AuthorSerializer
+
+
+class AuthorDetail(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = AuthorSerializer
