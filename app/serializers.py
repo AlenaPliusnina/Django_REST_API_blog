@@ -12,11 +12,10 @@ class AuthorSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
 
     author = AuthorSerializer(required=False, read_only=True)
-    # category = CategorySerializer(required=False)
 
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = ['id', 'title', 'status', 'content', 'updated', 'publication_date', 'author', 'category']
 
 
 class CategorySerializer(serializers.ModelSerializer):

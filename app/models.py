@@ -18,5 +18,5 @@ class Post(models.Model):
     content = models.TextField()
     updated = models.DateTimeField(default=timezone.now)
     publication_date = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, null=True, default=None, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, null=True, default=None, on_delete=models.CASCADE, related_name='author')
     category = models.ForeignKey(Category, blank=True, null=True, on_delete=models.SET_NULL, related_name='posts')
