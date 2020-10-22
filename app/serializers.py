@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
-from app.models import Post, Category
 from rest_framework import serializers
+
+from app.models import Post, Category
 
 
 class AuthorSerializer(serializers.ModelSerializer):
@@ -11,11 +12,25 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
 
-    author = AuthorSerializer(required=False, read_only=True)
+    author_id = serializers.IntegerField(source="author.id")
+    author_username = serializers.CharField(read_only=True, source="author.username")
+
+    def create(self, validated_data):
+        author_id = validated_data.pop("author", {}).pop("id", None)
+
+        if not author_id:
+            raise Exception("Incorrect author id")
+
+        try:
+            author = User.objects.get(id=author_id)
+        except User.DoesNotExist:
+            raise Exception("Author Does Not Exist")
+        return Post.objects.create(author=author, **validated_data)
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'status', 'content', 'updated', 'publication_date', 'author', 'category']
+        fields = ['id', 'title', 'status', 'content', 'updated', 'publication_date', 'author_id',
+                  'author_username', 'category']
 
 
 class CategorySerializer(serializers.ModelSerializer):
