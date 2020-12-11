@@ -65,7 +65,7 @@
 
 5. /admin - вход в административную панель, через которую можно создать пользователей и обновить авторов для уже существующих постов.
 
-   ![Детали по категории](/screenshots/screen_9.png)
-   ![Детали по категории](/screenshots/screen_10.png)
-   ![Детали по категории](/screenshots/screen_11.png)
-   ![Детали по категории](/screenshots/screen_12.png)
+   ![Административная панель](/screenshots/screen_9.png)
+   ![Административная панель](/screenshots/screen_10.png)
+   ![Административная панель](/screenshots/screen_11.png)
+   ![Административная панель](/screenshots/screen_12.png)
