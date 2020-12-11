@@ -1,5 +1,13 @@
 # Django_REST_API_blog /
 
+     Django, Django REST framework, Sqlite3 (локально), PostgreSQL (на Heroku)
+
+Описание проекта:
+
+     Проект созданный на основе Django REST framework представляет собой API для сайта-блога.
+
+Созданый API размещен на Heroku и доступен по ссылке: https://shielded-reaches-49083.herokuapp.com/
+
 Разворачиваем проект локально:
 
 1. Скачайте репозиторий
@@ -31,3 +39,33 @@
 7. Для входа в администравтивную панель проекта создайте суперпользователя при помощи команды:
 
        python manage.py createsuperuser
+
+
+Описание функционала:
+
+1. / - список всех постов, создание нового поста
+
+   ![Список всех постов](/screenshots/screen_1.png)
+   ![Список всех постов](/screenshots/screen_2.png)
+   ![Список всех постов](/screenshots/screen_3.png)
+   
+2. /<int:pk> - детали по конкретному посту
+
+   ![Детали по конкретному посту](/screenshots/screen_4.png)
+
+3. /categories - список категорий и входящих в них постов, создание новой категории
+
+   ![Список категорий](/screenshots/screen_5.png)
+   ![Список категорий](/screenshots/screen_6.png)
+   ![Список категорий](/screenshots/screen_7.png)
+
+4. /categories/<int:pk> - детали по конкретной категории
+
+   ![Детали по категории](/screenshots/screen_8.png)
+
+5. /admin - вход в административную панель, через которую можно создать пользователей и обновить авторов для уже существующих постов.
+
+   ![Детали по категории](/screenshots/screen_9.png)
+   ![Детали по категории](/screenshots/screen_10.png)
+   ![Детали по категории](/screenshots/screen_11.png)
+   ![Детали по категории](/screenshots/screen_12.png)
