@@ -1,4 +1,4 @@
-# Django_REST_API_blog /
+# Django_REST_API_blog / API для сайта-блога
 
      Django, Django REST framework, Sqlite3 (локально), PostgreSQL (на Heroku)
 
